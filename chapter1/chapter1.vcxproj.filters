@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\6_Default_Value.cpp">
+    <ClCompile Include="source\8_NameSpace.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
