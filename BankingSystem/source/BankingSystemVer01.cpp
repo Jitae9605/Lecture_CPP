@@ -69,28 +69,31 @@ int main(void)
 
 void ShowMenu(void)				// 메뉴출력
 {
+	cout << endl;
 	cout << "-----Menu-----" << endl;
+	cout << endl;
 	cout << "1. 계좌개설" << endl;
-	cout << "2. 입 금" << endl;
-	cout << "3. 출 금" << endl;
+	cout << "2. 입  금" << endl;
+	cout << "3. 출  금" << endl;
 	cout << "4. 계좌정보 전체 출력" << endl;
-	cout << "5. 프로그램 종료" << endl;
+	cout << "5. 프로그램 종료" << endl << endl;
 }
 
 void MakeAccount(void)			// 계좌개설을 위한 함수
 {
+	cout << endl;
 	int id;
 	char name[NAME_LEN];
 	int balance;
 
 	cout << "[계좌개설]" << endl;
-	cout << "계좌Id:";
+	cout << "계좌Id :";
 	cin >> id;
-	cout << "이름:";
+	cout << "이름 :";
 	cin >> name;
-	cout << "입금액";
+	cout << "입금액 : ";
 	cin >> balance;
-	cout << endl;
+	cout << endl << endl;
 
 	accArr[accNum].accID = id;
 	accArr[accNum].balance = balance;
@@ -100,6 +103,7 @@ void MakeAccount(void)			// 계좌개설을 위한 함수
 
 void DepositMoney(void)			// 입금
 {
+	cout << endl;
 	int Money;
 	int id;
 	cout << "[입 금]" << endl;
@@ -122,6 +126,7 @@ void DepositMoney(void)			// 입금
 
 void WithdrawMoney(void)		// 출금
 {
+	cout << endl;
 	int Money;
 	int id;
 	cout << "[출 금]" << endl;
@@ -148,9 +153,15 @@ void ShowAllAcount(void)		// 잔액조회
 {
 	for (int i = 0; i < accNum; i++)
 	{
+		cout << endl;
+		cout << "==============";
+		cout << endl;
 		cout << "계좌 ID : " << accArr[i].accID << endl;
 		cout << "이름 : " << accArr[i].cusName << endl;
-		cout << "잔액 : " << accArr[i].balance << endl;
+		cout << "잔액 : " << accArr[i].balance << endl <<endl;
+		cout << "==============";
+		cout << endl;
+		cout << endl;
 
 	}
 }
