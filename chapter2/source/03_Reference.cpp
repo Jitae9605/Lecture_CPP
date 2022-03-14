@@ -1,7 +1,16 @@
 #include <iostream>
+#pragma warning(disable:4996)
 using namespace std;
 
 // 3.참조자의 이해
+
+// 4)
+void SwapByRef2(int& ref1, int& ref2)		// 매개변수를 참조자로 받는다.
+{
+	int temp = ref1;
+	ref1 = ref2;
+	ref2 = temp;
+}
 
 int main(void)
 {
@@ -41,7 +50,39 @@ int main(void)
 	// VAL : 0135FCD4 (값은 매번 다르지만 아래와 항상 같은 값을 가리킴)
 	// REF : 0135FCD4
 
-	
+	std::cout << "------------ < 3) 포인터 참조자  > ----------------" << std::endl;
+	// 3) 포인터 참조자
+
+	int num_3 = 12;
+	int* ptr_3 = &num_3;
+	int** dptr_3 = &ptr_3;
+
+	int& ref_3 = num_3;				// int &ref_3		= num_3
+	int* (&pref_3) = ptr_3;			// int *(&pref_3)	= *(ptr_3) = *&num_3 = num_3
+	int** (&dpref_3) = dptr_3;		// int **(&dpref_3) = **(dptr_3) = (*(*&ptr_3)) = (*&(*&num_3)) = num_3
+
+	cout << ref_3 << endl;			// num_3 = 12
+	cout << *pref_3 << endl;		// *ptr_3 = *&num_3 = num_3 = 12
+	cout << **dpref_3 << endl;		// **dptr = *(*&ptr_3) = *ptr_3 = *&num_3 = num_3 = 12
+
+	// * 출력결과 *
+	// 12
+	// 12
+	// 12
+
+	std::cout << "------------ < 4) 참조자 활용  > ----------------" << std::endl;
+	// 4) 참조자 활용
+	// Call-by-reference 이다 
+	int val1_4 = 10;
+	int val2_4 = 20;
+
+	SwapByRef2(val1_4, val2_4);				// 입력받은 매개변수의 참조자를 함수내부에 만들어 해당값을 교환
+	cout << "val1_4 : " << val1_4 << endl;
+	cout << "val2_4 : " << val2_4 << endl;
+
+	// * 출력결과 *
+	// val1_4 : 20
+	// val2_4 : 10
 
 	return 0;
 }
