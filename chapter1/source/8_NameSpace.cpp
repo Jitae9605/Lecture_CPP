@@ -11,6 +11,13 @@ namespace BestComImpl
 	{
 		std::cout << "BestCom이 정의한 함수" << std::endl;
 	}
+
+	void SimpleFunc_5(void)
+	{
+		std::cout << "BestCom이 정의한 함수" << std::endl;
+	}
+	// 이렇게 한번에 선언하는것도 가능
+
 }
 
 namespace ProgComImpl
@@ -79,6 +86,10 @@ int main(void)
 	// BestCom이 정의한 함수
 	// So Pretty!!
 	// ProgCom이 정의한 함수
+
+	// ** 이름공간은 중첩이 가능하다
+	// ex) 이름공간1{이름공간2{함수명();}}
+	// 그럴경우 함수의 사용은 이름공간1::이름공간2::함수명();으로 호출
 
 	return 0;
 }
