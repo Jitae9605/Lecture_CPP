@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\6_Default_Value.cpp">
+    <ClCompile Include="source\7_Inline_Function.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
