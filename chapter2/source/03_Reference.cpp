@@ -12,6 +12,10 @@ void SwapByRef2(int& ref1, int& ref2)		// 매개변수를 참조자로 받는다.
 	ref2 = temp;
 }
 
+// 5)
+int& RefRetFuncOne(int& ref);
+int RefRetFuncTwo(int& ref);
+
 int main(void)
 {
 	std::cout << "------------ < 1) 참조자 기초  > ----------------" << std::endl;
@@ -84,5 +88,56 @@ int main(void)
 	// val1_4 : 20
 	// val2_4 : 10
 
+
+	std::cout << "------------ < 5) 반환형이 참조자인 함수 > ----------------" << std::endl;
+	// 5) 반환형이 참조자인 함수
+	// 반환형이 참조자일경우 그 반환값을 받는 대상의 자료형에 따라 결과가 달라진다
+	// 참조자가 그 값을 받을경우, 받는 참조자도 매개변수 등의 참조자가 된다.
+	// 참조자가 아닐 경우, 받는 대상은 오로지 값만을 받는다.
+
+	int num1_5 = 1;
+
+	// 반환형이 참조자인 함수
+	int& num2_5 = RefRetFuncOne(num1_5);					// 이러면 num1_5에 대한 참조자가 2개(num2_5, ref)가 생겼다가 함수를 빠져나오면서 1개(ref)가 소멸
+	int num3_5 = RefRetFuncOne(num1_5);						// 이러면 num3_5변수에 함수의 반환하는 값만 저장된다(값 복사)	
+															// 즉, num3_5는 완전히 별개의 다른 함수이다.
+	
+	// 반환형이 정수형인 함수
+	//int& num4_5 = RefRetFuncTwo(num1_5);					// 참조자가 일반 반환값을 받을수 없다 
+															// ( 오류발생!!! => 함수가 끝나면 값만 남고 변수가 사라지므로 참조자가 가리킬 대상이 없음)
+
+	int num5_5 = RefRetFuncTwo(num1_5);						// 이건 그냥 변수가 값받는것
+
+	num1_5++;
+	num2_5++;
+	num3_5 += 100;
+
+	cout << "num1_5 : " << num1_5 << endl;
+	cout << "num2_5 : " << num2_5 << endl;
+	cout << "num3_5 : " << num3_5 << endl;				// num3_5가 별개의 함수임을 증명하기 위해 다른값을 더함
+	//cout << "num4_5 : " << num2_5 << endl;			// 오류이므로 주석처리
+	cout << "num5_5 : " << num2_5 << endl;				
+
+
+	// * 출력결과 *
+	// num1_5 : 4
+	// num2_5 : 4
+	// num3_5 : 103
+	// num5_5 : 6			
+
+
 	return 0;
+}
+
+// 5)
+int& RefRetFuncOne(int& ref)
+{
+	ref++;
+	return ref;
+}
+
+int RefRetFuncTwo(int& ref)
+{
+	ref++;
+	return ref;
 }
