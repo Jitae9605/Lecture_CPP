@@ -15,7 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\02_Class_And_Function_In_Struct.cpp">
+    <ClInclude Include="source\01_5_1_Car.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\01_5_2_Car.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="source\01_5_3_Racing_Main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

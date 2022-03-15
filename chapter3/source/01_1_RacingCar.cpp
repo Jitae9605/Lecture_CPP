@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string.h>
 
-// 자동차 레이싱 상황 만드는 함수
+// 자동차 레이싱 상황 만드는 프로그램
+// 1) 프로그램 원형
 
 #pragma warning(disable:4996)
 using namespace std;
