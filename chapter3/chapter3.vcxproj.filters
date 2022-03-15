@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\04_New_And_Delete.cpp">
+    <ClCompile Include="source\01_0_Struct.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="source\01_1_RacingCar.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
