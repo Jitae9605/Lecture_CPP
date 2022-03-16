@@ -2,7 +2,7 @@
 #pragma warning(disable:4996)
 using namespace std;
 
-// 3. 증상별 감기약 처방
+// 4. 종합감기약
 
 class SinivelCap
 {
@@ -31,18 +31,25 @@ public:
 	}
 };
 
+class Contac600
+{
+private:
+	SinivelCap sin;
+	SneezeCap sne;
+	SnuffleCap snu;
+public:
+	void Take() const
+	{
+		sin.Take();
+		sne.Take();
+		snu.Take();
+	}
+};
+
 class ColdPatient
 {
 public:
-	void TakeSinivelCap(const SinivelCap& cap)const
-	{
-		cap.Take();
-	}
-	void TakeSneezeCap(const SneezeCap& cap)const
-	{
-		cap.Take();
-	}
-	void TakeSnuffleCap(const SnuffleCap& cap)const
+	void TakeContac600(const Contac600& cap)const
 	{
 		cap.Take();
 	}
@@ -50,14 +57,10 @@ public:
 
 int main(void)
 {
-	SinivelCap scap;
-	SneezeCap zcap;
-	SnuffleCap ncap;
+	Contac600 cap;
 
 	ColdPatient sufferer;
-	sufferer.TakeSinivelCap(scap);
-	sufferer.TakeSneezeCap(zcap);
-	sufferer.TakeSnuffleCap(ncap);
+	sufferer.TakeContac600(cap);
 
 	// * 출력결과 *
 	// 콧물이 낫습니다
