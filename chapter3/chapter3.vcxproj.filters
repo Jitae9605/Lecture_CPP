@@ -15,15 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\01_5_1_Car.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="source\01_5_2_Car.cpp">
+    <ClCompile Include="source\03_Fruit_SalesSimulator_1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="source\01_5_3_Racing_Main.cpp">
+    <ClCompile Include="source\04_Information_Hiding.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
