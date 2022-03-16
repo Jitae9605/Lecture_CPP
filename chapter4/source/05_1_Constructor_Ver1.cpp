@@ -3,6 +3,7 @@
 using namespace std;
 
 // 5.생성자
+// 1) 생성자의 이해
 
 class SimpleClass
 {
@@ -10,7 +11,7 @@ private:
 	int num1;
 	int num2;
 public:
-	SimpleClass()		// 생성자 = 클래스이름과 같은 이름 + 반환영지정 X
+	SimpleClass()		// 생성자 == 클래스이름과 같은 이름 + 반환영지정 X
 	{
 		num1 = 0;
 		num2 = 0;

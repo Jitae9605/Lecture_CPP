@@ -1,6 +1,8 @@
 #include <iostream>
 #pragma warning(disable:4996)
 
+// Fruit_SalesSimulator_1에서 생성자 추가
+
 using namespace std;
 
 class FruitSeller

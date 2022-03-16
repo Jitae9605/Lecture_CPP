@@ -3,6 +3,7 @@
 using namespace std;
 
 // 5.생성자
+// 2) 함수선언을 지역적으로 하는것도 가능함
 
 class SimpleClass
 {
