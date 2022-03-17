@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{04f13ee0-0e9c-4d58-81c2-bf57f0a3b81a}</ProjectGuid>
-    <RootNamespace>chapter5</RootNamespace>
+    <ProjectGuid>{7c175d8e-3e7d-46ab-8cba-0e396e0de4e3}</ProjectGuid>
+    <RootNamespace>chapter6</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\05_DeadTime_Of_ReturnObj.cpp" />
+    <ClCompile Include="source\04_Friend_Function.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
