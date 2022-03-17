@@ -1,8 +1,8 @@
 /*
-* Banking System Ver 0.2
+* Banking System Ver 0.3
 * 작성자 : 이지태
-* 내용 : Account 클래스 정의, 객체 포인터 배열 적용
-* ~ chapter4 까지의 내용
+* 내용 : 복사생성자를 이용
+* + chapter5 의  내용
 */
 #include<iostream>
 #include<cstring>
@@ -24,12 +24,18 @@ class Account
 private:
 	int accID;					// 계좌번호
 	int balance;				// 잔액
-	char *cusName;				// 고객이름
+	char* cusName;				// 고객이름
 public:
 	Account(int ID, int money, char* name) : accID(ID), balance(money)
 	{
-		cusName = new char[strlen(name) + 1];		// 깊은복사
-		strcpy(cusName, name);				
+		cusName = new char[strlen(name) + 1];		// 깊은 복사
+		strcpy(cusName, name);
+	}
+	
+	Account(const Account& ref) : accID(ref.accID), balance(ref.balance)
+	{
+		cusName = new char[strlen(ref.cusName)+1];
+		strcpy(cusName, ref.cusName);
 	}
 
 	int GetAccID() { return accID; }
