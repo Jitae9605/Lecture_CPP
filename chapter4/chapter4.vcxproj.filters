@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\11_SelfReference.cpp">
+    <ClCompile Include="source\Importat_Moving_Constructor.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
