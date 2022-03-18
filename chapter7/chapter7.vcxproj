@@ -139,7 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\01_1_EmployeeManager_Ver1.cpp" />
+    <ClCompile Include="source\04_1_Protected_Inheritance.cpp" />
+    <ClCompile Include="source\99_Practice_1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

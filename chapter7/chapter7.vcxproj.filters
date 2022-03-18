@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\01_1_EmployeeManager_Ver1.cpp">
+    <ClCompile Include="source\99_Practice_1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="source\04_1_Protected_Inheritance.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
