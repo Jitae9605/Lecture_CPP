@@ -2,7 +2,7 @@
 #include <cstring>
 #pragma warning(disable:4996)
 
-// 3. friend 클래스 형식/선언
+// 2_1. friend 클래스 형식/선언
 // a가 b를 firend로 선언을 하면 b는 a의 private에 접근이 가능하다
 // 선언은 단방향이다. 
 

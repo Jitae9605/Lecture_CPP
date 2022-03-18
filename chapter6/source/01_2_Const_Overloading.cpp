@@ -2,7 +2,7 @@
 #include <cstring>
 #pragma warning(disable:4996)
 
-// 2. Const 함수 오버로딩
+// 1_2. Const 함수 오버로딩
 // 
 
 using namespace std;

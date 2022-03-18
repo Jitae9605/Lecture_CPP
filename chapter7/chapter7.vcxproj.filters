@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Extra_Moving_Constructor.cpp">
+    <ClCompile Include="chapter7_상속의 이해.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="chapter4_클래스의 완성.cpp">
+    <ClCompile Include="source\01_Inheritance.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
