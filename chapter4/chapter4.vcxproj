@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="chapter4_클래스의 완성.cpp" />
     <ClCompile Include="source\Extra_Moving_Constructor.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
