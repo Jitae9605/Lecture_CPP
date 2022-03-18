@@ -2,7 +2,7 @@
 #include <cstring>
 #pragma warning(disable:4996)
 
-// 4. friend 함수 형식/선언
+// 2_2. friend 함수 형식/선언
  
 
 using namespace std;
