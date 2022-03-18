@@ -18,5 +18,8 @@
     <ClCompile Include="chapter7_상속의 이해.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="source\01_Inheritance.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
