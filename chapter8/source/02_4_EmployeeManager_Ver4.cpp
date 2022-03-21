@@ -3,8 +3,8 @@
 #pragma warning(disable:4996)
 using namespace std;
 
-// 1. 고용관리시스템 - ver3
-// 다양한 고용형태(클래스 추가)
+// 2_4 고용관리시스템 - ver4
+// virtual 함수 도입을 통한 오류해결
 
 class Employee
 {
@@ -20,6 +20,14 @@ public:
 	{
 		cout << "name : " << name << endl;
 	}
+
+	virtual int GetPay() const						// 이 함수에 오버라이딩된 모든 함수는 모두 가상함수가 된다
+	{
+		return 0;
+	}
+
+	virtual void ShowSalaryInfo() const				// 이 함수에 오버라이딩된 모든 함수는 모두 가상함수가 된다
+	{ }
 };
 
 class TemporaryWorker : public Employee		// 임시직(= 정규직 아님)
@@ -29,24 +37,24 @@ private:
 	int payPerHour;		// 시간당 급여
 
 public:
-	TemporaryWorker(const char*name,int pay)
-		:Employee(name),WorkTime(0),payPerHour(pay)
+	TemporaryWorker(const char* name, int pay)
+		:Employee(name), WorkTime(0), payPerHour(pay)
 	{ }
-	
+
 	void AddWorkTime(int time)			// 일한 시간 추가
 	{
 		WorkTime += time;
 	}
 
-	int GetPay() const					// 이달의 급여
+	int GetPay() const					// 이달의 급여			// 가상함수됨
 	{
 		return WorkTime * payPerHour;
 	}
 
-	void ShowSalaryInfo() const
+	void ShowSalaryInfo() const									// 가상함수됨
 	{
 		ShowYourName();
-		cout << "salary : " << endl << endl;
+		cout << "salary : " << GetPay() << endl << endl;
 	}
 };
 
@@ -59,22 +67,22 @@ public:
 	PermanentWorker(const char* name, int money) : salary(money), Employee(name)
 	{ }
 
-	int Getpay() const
+	int GetPay() const											// 가상함수됨				
 	{
 		return salary;
 	}
 
-	void ShowSalaryInfo() const
+	void ShowSalaryInfo() const									// 가상함수됨
 	{
 		ShowYourName();
-		cout << "salary : " << Getpay() << endl << endl;
+		cout << "salary : " << GetPay() << endl << endl;
 	}
 };
 
 class EmployeeHandler
 {
 private:
-	Employee* empList[50];
+	Employee* empList[50];								// 
 	int empNum;
 public:
 	EmployeeHandler() :empNum(0)
@@ -87,19 +95,23 @@ public:
 
 	void ShowAllSalrayInfo() const
 	{
-		/*
+
 		for (int i = 0; i < empNum; i++)
-			empList[i]->ShowSalaryInfo();
-			*/								// 오류 발생! : Employee 클래스에는 ShowSalaryInfo()함수 없음
+			empList[i]->ShowSalaryInfo();					// 오류해결
+															// Employee(부모)에서 ShowSalaryInfo()함수를 가상함수로 정의
+															// -> 이후의 자식클래스에서 오버라이딩된 동일이름의 함수들도 모두 가상함수가 된다.
+															// -> 가상함수가 되었으므로 부모클래스인 Employee에서 함수사용가능(객체의 최종 포인터변수값 출력)
 	}
 
 	void ShowTotalSalary() const
 	{
 		int sum = 0;
-		/*
+
 		for (int i = 0; i < empNum; i++)
-			sum += empList[i]->Getpay();
-			*/								// 오류 발생! : Employee 클래스에는 Getpay()함수 없음
+			sum += empList[i]->GetPay();					// 오류해결
+															// Employee(부모)에서 GetPay()함수를 가상함수로 정의
+															// -> 이후의 자식클래스에서 오버라이딩된 동일이름의 함수들도 모두 가상함수가 된다.
+															// -> 가상함수가 되었으므로 부모클래스인 Employee에서 함수사용가능(객체의 최종 포인터변수값 출력)
 		cout << "salary sum : " << sum << endl;
 	}
 
@@ -127,7 +139,7 @@ public:
 
 	int GetPay() const		// PermanentWorker::GetPay() = 급여
 	{
-		return PermanentWorker::Getpay() + (int)(salesResult * bonusRatio);
+		return PermanentWorker::GetPay() + (int)(salesResult * bonusRatio);
 	}
 
 	void ShowSalaryInfo() const
@@ -154,7 +166,7 @@ int main(void)
 	seller->AddSaleseResult(7000);		// 영업실적 추가
 	handler.AddEmployee(seller);
 
-		
+
 	// 2.2 임시직 등록
 	TemporaryWorker* alba = new TemporaryWorker("Jung", 700);
 	alba->AddWorkTime(5);				// 5시간 일함
@@ -168,7 +180,19 @@ int main(void)
 	handler.ShowTotalSalary();
 
 	// * 출력결과 *
-	// salary sum : 0
+	// name : KIM
+	// salary: 1000
+	// 
+	// name : LEE
+	// salary : 1500
+	// 
+	// name : Hong
+	// salary : 1700
+	// 
+	// name : Jung
+	// salary : 3500
+	// 
+	// salary sum : 7700
 
 	return 0;
 }
