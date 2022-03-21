@@ -11,3 +11,9 @@ public:
 		cout << "FirstFunc" << endl;
 	}
 };
+
+int main(void)
+{
+
+	return 0;
+}
