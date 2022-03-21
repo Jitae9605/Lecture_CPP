@@ -1,7 +1,7 @@
 /*
 * Banking System Ver 0.6
 * 작성자 : 이지태
-* 내용 : 가상함수도입 + 계좌종류 추가(보통예금,신용신뢰 - 이자개념 도입)
+* 내용 : 가상함수도입 + 계좌종류 추가(보통예금,신용신뢰 - 이자개념 도입 -> Deposit함수 수정(가상함수화)
 * + chapter8 의  내용
 */
 #include<iostream>
@@ -51,7 +51,7 @@ public:
 
 	int GetAccID() const { return accID; }			// const 추가 (단순 조회 함수 이므로)
 
-	virtual void Deposit(int money)
+	virtual void Deposit(int money)					// 가상함수화(이자)
 	{
 		balance += money;
 	}
@@ -156,8 +156,8 @@ public:
 
 		cout << "[계좌종류선택]" << endl;
 
-		cout << "1.보통예급계좌";
-		cout << "2.신용신뢰계좌";
+		cout << "1.보통예급계좌" << endl;
+		cout << "2.신용신뢰계좌" << endl;
 		cout << "선택 : ";
 		cin >> Select;
 		cout << endl << endl;
