@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\04_2_Virtual_Destuctor_2.cpp">
+    <ClCompile Include="source\05_1_ReferenceAttribute.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
