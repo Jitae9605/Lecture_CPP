@@ -4,7 +4,7 @@
 using namespace std;
 
 // 1. 고용관리시스템 - ver2
-// 다양한 고용형태 추가
+// Employee 클래스 도입
 
 class Emplyee
 {
