@@ -37,7 +37,8 @@ Point& operator--(Point& ref)
 }
 
 ostream& operator<<(ostream& os, const Point& other)		// << 연산자 오버로딩
-{
+{															// 여기서 ostream은 cout 으로 출력버퍼와 같이 원래 정해진것
+															// 이해가 아니라 암기의 영역이다.
 	os << '[' << other.xpos << ", " << other.ypos << ']' << endl;
 	return os;
 }
