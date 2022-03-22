@@ -18,6 +18,18 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\BankingSystemVer07\Account.cpp" />
+    <ClCompile Include="source\BankingSystemVer07\Account.h" />
+    <ClCompile Include="source\BankingSystemVer07\AccountHandler.cpp" />
+    <ClCompile Include="source\BankingSystemVer07\BankingSystemMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\BankingSystemVer07\AccountHandler.h" />
+    <ClInclude Include="source\BankingSystemVer07\BankingCommonDecl.h" />
+    <ClInclude Include="source\BankingSystemVer07\HighCreditAccount.h" />
+    <ClInclude Include="source\BankingSystemVer07\NormalAccount.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,9 +150,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="source\BankingSystemVer06.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

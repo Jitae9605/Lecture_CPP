@@ -15,8 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\BankingSystemVer06.cpp">
+    <ClCompile Include="source\BankingSystemVer07\Account.h">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="source\BankingSystemVer07\Account.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BankingSystemVer07\AccountHandler.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="source\BankingSystemVer07\BankingSystemMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\BankingSystemVer07\NormalAccount.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BankingSystemVer07\HighCreditAccount.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BankingSystemVer07\AccountHandler.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BankingSystemVer07\BankingCommonDecl.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
