@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\01_3_One_Operater_Overloading.cpp">
+    <ClCompile Include="source\04_3_Point_Console_Output.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
