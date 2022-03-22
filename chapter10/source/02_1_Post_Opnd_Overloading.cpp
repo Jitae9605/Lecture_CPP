@@ -43,7 +43,7 @@ Point& operator--(Point& ref)				// 전위감소
 
 const Point operator--(Point& ref, int)		// 후위감소
 {
-	const Point retobj(ref);			// const 객체
+	const Point retobj(ref);				// const 객체
 	ref.xpos -= 1;
 	ref.ypos -= 1;
 	return retobj;
