@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\01_1_First_Operation_Overloading.cpp">
+    <ClCompile Include="source\01_2_Assign_Shallow_CopyError.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
