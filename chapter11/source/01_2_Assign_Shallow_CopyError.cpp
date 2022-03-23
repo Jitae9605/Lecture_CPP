@@ -2,7 +2,7 @@
 #pragma warning(disable:4996)
 using namespace std;
 
-// 2. 디폴트 대입연산자의 문제점
+// 1_2. 디폴트 대입연산자의 문제점
 
 class Person
 {
