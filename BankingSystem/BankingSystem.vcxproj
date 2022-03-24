@@ -19,20 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\BankingSystemVer09\Account.cpp" />
-    <ClCompile Include="source\BankingSystemVer09\AccountArray.cpp" />
-    <ClCompile Include="source\BankingSystemVer09\AccountHandler.cpp" />
-    <ClCompile Include="source\BankingSystemVer09\BankingSystemMain.cpp" />
-    <ClCompile Include="source\BankingSystemVer09\String.cpp" />
+    <ClCompile Include="source\BankingSystemVer10\Account.cpp" />
+    <ClCompile Include="source\BankingSystemVer10\AccountHandler.cpp" />
+    <ClCompile Include="source\BankingSystemVer10\BankingSystemMain.cpp" />
+    <ClCompile Include="source\BankingSystemVer10\String.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\BankingSystemVer09\Account.h" />
-    <ClInclude Include="source\BankingSystemVer09\AccountArray.h" />
-    <ClInclude Include="source\BankingSystemVer09\AccountHandler.h" />
-    <ClInclude Include="source\BankingSystemVer09\BankingCommonDecl.h" />
-    <ClInclude Include="source\BankingSystemVer09\HighCreditAccount.h" />
-    <ClInclude Include="source\BankingSystemVer09\NormalAccount.h" />
-    <ClInclude Include="source\BankingSystemVer09\String.h" />
+    <ClInclude Include="source\BankingSystemVer10\Account.h" />
+    <ClInclude Include="source\BankingSystemVer10\AccountHandler.h" />
+    <ClInclude Include="source\BankingSystemVer10\BankingCommonDecl.h" />
+    <ClInclude Include="source\BankingSystemVer10\BoundCheckArray.h" />
+    <ClInclude Include="source\BankingSystemVer10\HighCreditAccount.h" />
+    <ClInclude Include="source\BankingSystemVer10\NormalAccount.h" />
+    <ClInclude Include="source\BankingSystemVer10\String.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
