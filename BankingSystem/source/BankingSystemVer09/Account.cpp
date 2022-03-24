@@ -7,28 +7,29 @@
 #include "Account.h"
 
 
-Account::Account(int ID, int money, const char* name) : accID(ID), balance(money)
+Account::Account(int ID, int money, String name) : accID(ID), balance(money)
 {
-	cusName = new char[strlen(name) + 1];
-	strcpy(cusName, name);
+	// cusName = new char[strlen(name) + 1];
+	// strcpy(cusName, name);
+	cusName = name;
 }
 
-Account::Account(const Account& ref) : accID(ref.accID), balance(ref.balance)
-{
-	cusName = new char[strlen(ref.cusName) + 1];
-	strcpy(cusName, ref.cusName);
-}
-
-Account& Account::operator=(const Account& ref)
-{
-	accID = ref.accID;
-	balance = ref.balance;
-
-	delete[]cusName;
-	cusName = new char[strlen(ref.cusName) + 1];
-	strcpy(cusName, ref.cusName);
-	return *this;
-}
+//Account::Account(const Account& ref) : accID(ref.accID), balance(ref.balance)
+//{
+//	cusName = new char[strlen(ref.cusName) + 1];
+//	strcpy(cusName, ref.cusName);
+//}
+//
+//Account& Account::operator=(const Account& ref)
+//{
+//	accID = ref.accID;
+//	balance = ref.balance;
+//
+//	delete[]cusName;
+//	cusName = new char[strlen(ref.cusName) + 1];
+//	strcpy(cusName, ref.cusName);
+//	return *this;
+//}
 
 int Account::GetAccID() const { return accID; }			// const 추가 (단순 조회 함수 이므로)
 
@@ -59,8 +60,8 @@ void Account::ShowAccInfo() const						// const 추가 (단순 출력 함수이므로)
 	cout << endl;
 }
 
-Account::~Account()
-{
-	delete[]cusName;
-}
+//Account::~Account()
+//{
+//	delete[]cusName;
+//}
 

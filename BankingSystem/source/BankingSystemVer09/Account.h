@@ -16,15 +16,16 @@ private:
 	String cusName;				// ∞Ì∞¥¿Ã∏ß
 
 public:
-	Account(int ID, int money, const char* name);
-	Account(const Account& ref);
-	Account& operator=(const Account& ref);
+	Account(int ID, int money, String name);
+	// Account(int ID, int money, const char* name);
+	// Account(const Account& ref);
+	// Account& operator=(const Account& ref);
 
 	int GetAccID() const; 							
 	virtual void Deposit(int money);				
 	int Withdarw(int money);
 	void ShowAccInfo() const;						
-	~Account();
+	// ~Account();
 };
 
 #endif

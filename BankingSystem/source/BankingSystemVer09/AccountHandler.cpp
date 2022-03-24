@@ -5,6 +5,7 @@
 #include"BankingCommonDecl.h"
 #include"AccountArray.h"
 #include"Account.h"
+#include"String.h"
 
 AccountHandler::AccountHandler() :accNum(0)
 { }
@@ -106,7 +107,8 @@ AccountHandler::~AccountHandler()
 void AccountHandler::MakeNormalAccount(void)
 {
 	int id;
-	char name[NAME_LEN];
+	String name;
+	//char name[NAME_LEN];
 	int balance;
 	int interRate;
 
@@ -127,7 +129,8 @@ void AccountHandler::MakeNormalAccount(void)
 void AccountHandler::MakeCreditAccount(void)
 {
 	int id;
-	char name[NAME_LEN];
+	String name;
+	//char name[NAME_LEN];
 	int balance;
 	int interRate;
 	int creditLevel;
