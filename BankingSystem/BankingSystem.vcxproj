@@ -23,6 +23,7 @@
     <ClCompile Include="source\BankingSystemVer09\AccountArray.cpp" />
     <ClCompile Include="source\BankingSystemVer09\AccountHandler.cpp" />
     <ClCompile Include="source\BankingSystemVer09\BankingSystemMain.cpp" />
+    <ClCompile Include="source\BankingSystemVer09\String.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\BankingSystemVer09\Account.h" />

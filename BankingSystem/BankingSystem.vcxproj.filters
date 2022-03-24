@@ -27,6 +27,9 @@
     <ClCompile Include="source\BankingSystemVer09\BankingSystemMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="source\BankingSystemVer09\String.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\BankingSystemVer09\Account.h">
