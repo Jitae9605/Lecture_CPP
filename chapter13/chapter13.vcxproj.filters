@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\01_5_Special_FunctionTemplate.cpp">
+    <ClCompile Include="source\02_99_Calculator.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
