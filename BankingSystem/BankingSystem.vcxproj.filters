@@ -15,30 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\BankingSystemVer07\Account.h">
+    <ClCompile Include="source\BankingSystemVer09\Account.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="source\BankingSystemVer07\Account.cpp">
+    <ClCompile Include="source\BankingSystemVer09\AccountArray.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="source\BankingSystemVer07\AccountHandler.cpp">
+    <ClCompile Include="source\BankingSystemVer09\AccountHandler.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="source\BankingSystemVer07\BankingSystemMain.cpp">
+    <ClCompile Include="source\BankingSystemVer09\BankingSystemMain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\BankingSystemVer07\NormalAccount.h">
+    <ClInclude Include="source\BankingSystemVer09\Account.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="source\BankingSystemVer07\HighCreditAccount.h">
+    <ClInclude Include="source\BankingSystemVer09\AccountArray.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="source\BankingSystemVer07\AccountHandler.h">
+    <ClInclude Include="source\BankingSystemVer09\AccountHandler.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="source\BankingSystemVer07\BankingCommonDecl.h">
+    <ClInclude Include="source\BankingSystemVer09\BankingCommonDecl.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BankingSystemVer09\HighCreditAccount.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BankingSystemVer09\NormalAccount.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="source\BankingSystemVer09\String.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
