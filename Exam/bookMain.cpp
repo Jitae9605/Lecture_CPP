@@ -3,14 +3,15 @@
 #include<vector>
 #include<Windows.h>
 #pragma warning(disable:4996)
+
 using namespace std;
 
-class Product
+class Product			// 상품 클래스
 {
 private:
-	int idx;
-	int price;
-	char* description;
+	int idx;			// 상품번호
+	int price;			// 가격
+	char* description;	// 설명
 public:
 	Product(int aidx, int aprice, char* adescription) :idx(aidx), price(aprice)
 	{
@@ -25,16 +26,14 @@ public:
 		cout << "description : " << this->description << endl;
 
 	}
-
-
 };
 
-class Book:public Product
+class Book:public Product		// 책 클래스 : 상품클래스 상속
 {
 private:
-	char* title;
-	char* write;
-	char* publisher;
+	char* title;				// 책이름
+	char* write;				// 저자
+	char* publisher;			// 출판사
 public:
 	Book(int aidx, int aprice, char* adescription, char* atitle, char* awrite, char* apublisher)
 		:Product(aidx,aprice, adescription)
@@ -50,7 +49,7 @@ public:
 	}
 	void getProduct()
 	{
-		cout << "Book 등록된 상품목록" << endl << endl;
+		cout << " ----- < Book 등록된 상품목록 > ----- " << endl << endl;
 		Product::getProduct();
 		cout << "title : " << this->title << endl;
 		cout << "write : " << this->write << endl;
@@ -59,11 +58,11 @@ public:
 	}
 };
 
-class CD :public Product
+class CD :public Product			// CD 클래스 : 상품클래스 상속
 {
 private:
-	char* title;
-	char* singer;
+	char* title;					// 이름
+	char* singer;					// 가수이름
 public:
 	CD(int aidx, int aprice, char* adescription, char* atitle, char* asinger)
 		:Product(aidx, aprice, adescription)
@@ -76,7 +75,7 @@ public:
 	}
 	void getProduct()
 	{
-		cout << "CD 등록된 상품목록" << endl << endl;
+		cout << " ----- < CD 등록된 상품목록 > ----- " << endl << endl;
 		Product::getProduct();
 		cout << "title : " << this->title << endl;
 		cout << "singer : " << this->singer << endl<<endl;
@@ -84,11 +83,11 @@ public:
 
 };
 
-class CellPhone :public Product
+class CellPhone :public Product			// 휴대폰 클래스 : 상품클래스 상속
 {
 private:
-	char* model;
-	char* brand;
+	char* model;						// 모델명
+	char* brand;						// 브랜드명
 public:
 	CellPhone(int aidx, int aprice, char* adescription, char* amodel, char* abrand)
 		:Product(aidx, aprice, adescription)
@@ -101,7 +100,7 @@ public:
 	}
 	void getProduct()
 	{
-		cout << "CellPhone 등록된 상품목록" << endl << endl;
+		cout << " ----- < CellPhone 등록된 상품목록 > ----- " << endl << endl;
 		Product::getProduct();
 		cout << "model : " << this->model << endl;
 		cout << "brand : " << this->brand << endl << endl;
@@ -119,7 +118,7 @@ int main(void)
 	Product* pobj[100];
 	while (1)
 	{
-		int Select_main;
+		int Select_main;		// 메인메뉴
 		cout << " +++++++++++++++ POS ++++++++++++++++" << endl << endl;
 		cout << "1. 상품추가" << endl;
 		cout << "2. 상품조회" << endl;
@@ -127,7 +126,7 @@ int main(void)
 		cout << "선택 : ";
 		cin >> Select_main;
 
-		if (Select_main == 1)
+		if (Select_main == 1)					// 1. 상품추가
 		{
 			while (1)
 			{
@@ -141,7 +140,7 @@ int main(void)
 				cout << "선택 : ";
 				cin >> Select_Add;
 
-				if (Select_Add == 1)
+				if (Select_Add == 1)			// 1.1 책추가
 				{
 					system("cls");
 					cout << "idx : " << idx+1 << endl;
@@ -167,7 +166,7 @@ int main(void)
 
 				}
 
-				else if (Select_Add == 2)
+				else if (Select_Add == 2)		// 1.2 cd추가
 				{
 					system("cls");
 					cout << "idx : " << idx + 1 << endl;
@@ -189,7 +188,7 @@ int main(void)
 					idx++;
 				}
 
-				else if (Select_Add == 3)
+				else if (Select_Add == 3)		// 1.3 휴대폰추가
 				{
 					system("cls");
 					cout << "idx : " << idx + 1 << endl;
@@ -211,7 +210,7 @@ int main(void)
 					idx++;
 				}
 
-				else if (Select_Add == 4)
+				else if (Select_Add == 4)		// 1.4 뒤로가기
 				{
 					system("cls");
 					break;
@@ -227,7 +226,7 @@ int main(void)
 				
 		}
 	
-		else if (Select_main == 2)
+		else if (Select_main == 2)				// 2.상품조회
 		{
 			system("cls");
 			int Select_view = 0;
@@ -239,7 +238,7 @@ int main(void)
 			cin >> Select_view;
 
 
-			if (Select_view == 1)
+			if (Select_view == 1)				// 2.1 책 목록출력
 			{
 				vector<int>::iterator iter_book;
 
@@ -251,7 +250,7 @@ int main(void)
 				system("cls");
 			}
 
-			else if (Select_view == 2)
+			else if (Select_view == 2)			// 2.2 cd 목록출력
 			{
 				vector<int>::iterator iter_cd;
 
@@ -263,7 +262,7 @@ int main(void)
 				system("cls");
 			}
 
-			else if (Select_view == 3)
+			else if (Select_view == 3)			// 2.3 휴대폰 목록출력
 			{
 				vector<int>::iterator iter_cellphone;
 
@@ -283,7 +282,7 @@ int main(void)
 				
 		}
 		
-		else if (Select_main == 3)
+		else if (Select_main == 3)				// 3.프로그램종료
 		{
 			exit(1);
 		}
