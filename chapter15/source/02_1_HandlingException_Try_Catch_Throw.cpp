@@ -18,7 +18,7 @@ int main(void)
 		cout << "나눗셈의 몫 : " << num1 / num2 << endl;
 		cout << "나눗셈의 나머지 : " << num1 % num2 << endl;
 	}
-	catch (int expn)
+	catch (int expn)	// throw로 던져진 데이터를 받는다(자료형이 일치해야함)
 	{
 		cout << "제수는 " << expn << "이 될 수 없습니다." << endl;
 		cout << "프로그램을 다시 실행하세요." << endl;

@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\02_1_HandlingException_Try_Catch_Throw.cpp" />
+    <ClCompile Include="source\05_1_BadAlloc_Exception_By_New.cpp" />
+    <ClCompile Include="source\05_2_ReThrow_Exception.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
