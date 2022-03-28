@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bookMain.cpp" />
+    <ClCompile Include="bookMain_Upgrade.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="C++평가.txt" />
