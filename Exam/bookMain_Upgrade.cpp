@@ -26,9 +26,14 @@ public:
 		cout << "description : " << this->description << endl;
 
 	}
+
+	virtual void DeleteProduct()	// 상품 삭제(공통)
+	{
+		delete[]description;
+	}
 };
 
-class Book:public Product		// 책 클래스 : 상품클래스 상속
+class Book :public Product		// 책 클래스 : 상품클래스 상속
 {
 private:
 	char* title;				// 책이름
@@ -36,7 +41,7 @@ private:
 	char* publisher;			// 출판사
 public:
 	Book(int aidx, int aprice, char* adescription, char* atitle, char* awrite, char* apublisher) // 상품추가(공통 + book)
-		:Product(aidx,aprice, adescription)
+		:Product(aidx, aprice, adescription)
 	{
 		title = new char[strlen(atitle) + 1];
 		strcpy(title, atitle);
@@ -47,6 +52,7 @@ public:
 		publisher = new char[strlen(apublisher) + 1];
 		strcpy(publisher, apublisher);
 	}
+
 	void getProduct()		// 상품 상세정보출력(공통 + book)
 	{
 		cout << " ----- < Book 등록된 상품목록 > ----- " << endl << endl;
@@ -56,6 +62,15 @@ public:
 		cout << "publisher : " << this->publisher << endl << endl;
 
 	}
+
+	void DeleteProduct()			// 상품 삭제(공통 + book)
+	{
+		Product::DeleteProduct();
+		delete[]title;
+		delete[]write;
+		delete[]publisher;
+	}
+
 };
 
 class CD :public Product			// CD 클래스 : 상품클래스 상속
@@ -81,6 +96,13 @@ public:
 		cout << "singer : " << this->singer << endl<<endl;
 	}
 
+	void DeleteProduct()			// 상품 삭제(공통 + CD)
+	{
+		Product::DeleteProduct();
+		delete[]title;
+		delete[]singer;
+	}
+
 };
 
 class CellPhone :public Product			// 휴대폰 클래스 : 상품클래스 상속
@@ -98,7 +120,7 @@ public:
 		brand = new char[strlen(abrand) + 1];
 		strcpy(brand, abrand);
 	}
-	void getProduct()					// 상품 상세정보출력(공통 + CD)	
+	void getProduct()					// 상품 상세정보출력(공통 + 휴대폰)	
 	{
 		cout << " ----- < CellPhone 등록된 상품목록 > ----- " << endl << endl;
 		Product::getProduct();
@@ -106,6 +128,12 @@ public:
 		cout << "brand : " << this->brand << endl << endl;
 	}
 
+	void DeleteProduct()			// 상품 삭제(공통 + 휴대폰)
+	{
+		Product::DeleteProduct();
+		delete[]model;
+		delete[]brand;
+	}
 };
 
 int main(void)
@@ -122,7 +150,8 @@ int main(void)
 		cout << " +++++++++++++++ POS ++++++++++++++++" << endl << endl;
 		cout << "1. 상품추가" << endl;
 		cout << "2. 상품조회" << endl;
-		cout << "3. 종    료" << endl;
+		cout << "3. 상품삭제" << endl;
+		cout << "4. 종    료" << endl;
 		cout << "선택 : ";
 		cin >> Select_main;
 
@@ -228,61 +257,206 @@ int main(void)
 	
 		else if (Select_main == 2)				// 2. 상품조회
 		{
-			system("cls");
-			int Select_view = 0;
-			cout << " +++++++++++++++ 상품조회 ++++++++++++++++" << endl << endl;
-			cout << "1. BOOK" << endl;
-			cout << "2. CD" << endl;
-			cout << "3. CELL PHONE" << endl;
-			cout << "선택 : ";
-			cin >> Select_view;
-
-
-			if (Select_view == 1)				// 2.1 book 목록출력
+			while (1)
 			{
-				vector<int>::iterator iter_book;
 
-				for (iter_book = book_list.begin(); iter_book != book_list.end(); iter_book++)
-				{
-					pobj[*iter_book]->getProduct();
-				}
-				system("pause");
+
 				system("cls");
-			}
+				int Select_view = 0;
+				cout << " +++++++++++++++ 상품조회 ++++++++++++++++" << endl << endl;
+				cout << "1. BOOK" << endl;
+				cout << "2. CD" << endl;
+				cout << "3. CELL PHONE" << endl;
+				cout << "4. 뒤로가기" << endl;
+				cout << "선택 : ";
+				cin >> Select_view;
 
-			else if (Select_view == 2)			// 2.2 cd 목록출력
-			{
-				vector<int>::iterator iter_cd;
 
-				for (iter_cd = cd_list.begin(); iter_cd != cd_list.end(); iter_cd++)
+				if (Select_view == 1)				// 2.1 book 목록출력
 				{
-					pobj[*iter_cd]->getProduct();
+					vector<int>::iterator iter_book;
+
+					for (iter_book = book_list.begin(); iter_book != book_list.end(); iter_book++)
+					{
+						pobj[*iter_book]->getProduct();
+					}
+					system("pause");
+					system("cls");
 				}
-				system("pause");
-				system("cls");
-			}
 
-			else if (Select_view == 3)			// 2.3 CellPhone 목록출력
-			{
-				vector<int>::iterator iter_cellphone;
-
-				for (iter_cellphone = cellphone_list.begin(); iter_cellphone != cellphone_list.end(); iter_cellphone++)
+				else if (Select_view == 2)			// 2.2 cd 목록출력
 				{
-					pobj[*iter_cellphone]->getProduct();
-				}
-				system("pause");
-				system("cls");
-			}
+					vector<int>::iterator iter_cd;
 
-			else
-			{
-				while (getchar() != '\n');
-				cout << "잘못된 입력값입니다." << endl;
+					for (iter_cd = cd_list.begin(); iter_cd != cd_list.end(); iter_cd++)
+					{
+						pobj[*iter_cd]->getProduct();
+					}
+					system("pause");
+					system("cls");
+				}
+
+				else if (Select_view == 3)			// 2.3 CellPhone 목록출력
+				{
+					vector<int>::iterator iter_cellphone;
+
+					for (iter_cellphone = cellphone_list.begin(); iter_cellphone != cellphone_list.end(); iter_cellphone++)
+					{
+						pobj[*iter_cellphone]->getProduct();
+					}
+					system("pause");
+					system("cls");
+				}
+
+				else if (Select_view == 4)		// 2.4 뒤로가기
+				{
+					break;
+				}
+
+				else
+				{
+					while (getchar() != '\n');
+					cout << "잘못된 입력값입니다." << endl;
+				}
 			}
 				
 		}
+
+		else if (Select_main == 3)				// 3.상품삭제
+		{
+			while (1)
+			{
+
+
+				system("cls");
+				int Select_delete = 0;
+				cout << " +++++++++++++++ 상품삭제 ++++++++++++++++" << endl << endl;
+				cout << "1. BOOK" << endl;
+				cout << "2. CD" << endl;
+				cout << "3. CELL PHONE" << endl;
+				cout << "4. 뒤로가기" << endl;
+				cout << "선택 : ";
+				cin >> Select_delete;
+
+				if (Select_delete == 1)					// 3.1 book 삭제
+				{
+					int Check_find = 0;
+					int Delete_Product = 0;
+					vector<int>::iterator iter_book;
+
+					for (iter_book = book_list.begin(); iter_book != book_list.end(); iter_book++)
+					{
+						pobj[*iter_book]->getProduct();
+					}
+					
+					cout << "삭제하고자 하는 상품 번호를 입력하세요 :";
+					cin >> Delete_Product;
+					Delete_Product--;
+
+
+					for (iter_book = book_list.begin(); iter_book != book_list.end(); iter_book++)		
+					{
+						if (*iter_book == Delete_Product)
+						{
+							Check_find = 1;
+							pobj[Delete_Product]->DeleteProduct();
+							book_list.erase(iter_book);		
+							cout << Delete_Product << "번 상품 삭제되었습니다.";
+							system("pause");
+							break;
+						}
+					}
+					if (Check_find == 0)
+					{
+						cout << "해당상품을 찾을수 없습니다.";
+						system("pause");
+					}
+
+				}
+
+				else if (Select_delete == 2)			// 3.2 cd 삭제
+				{
+					int Check_find = 0;
+					int Delete_Product = 0;
+					vector<int>::iterator iter_cd;
+
+					for (iter_cd = cd_list.begin(); iter_cd != cd_list.end(); iter_cd++)
+					{
+						pobj[*iter_cd]->getProduct();
+					}
+
+					cout << "삭제하고자 하는 상품 번호를 입력하세요 :";
+					cin >> Delete_Product;
+					Delete_Product--;
+
+					for (iter_cd = cd_list.begin(); iter_cd != cd_list.end(); iter_cd++)
+					{
+						if (*iter_cd == Delete_Product)
+						{
+							Check_find = 1;
+							pobj[Delete_Product]->DeleteProduct();
+							cd_list.erase(iter_cd);
+							cout << Delete_Product << "번 상품 삭제되었습니다.";
+							system("pause");
+							break;
+						}
+					}
+
+					if (Check_find == 0)
+					{
+						cout << "해당상품을 찾을수 없습니다.";
+						system("pause");
+					}
+				}
+
+				else if (Select_delete == 3)			// 3.3 cellPhone 삭제
+				{
+					int Check_find = 0;
+					int Delete_Product = 0;
+					vector<int>::iterator iter_cellphone;
+
+					for (iter_cellphone = cellphone_list.begin(); iter_cellphone != cellphone_list.end(); iter_cellphone++)
+					{
+						pobj[*iter_cellphone]->getProduct();
+					}
+
+					cout << "삭제하고자 하는 상품 번호를 입력하세요 :";
+					cin >> Delete_Product;
+					Delete_Product--;
+
+					for (iter_cellphone = cellphone_list.begin(); iter_cellphone != cellphone_list.end(); iter_cellphone++)
+					{
+						if (*iter_cellphone == Delete_Product)
+						{
+							Check_find = 1;
+							pobj[Delete_Product]->DeleteProduct();
+							cellphone_list.erase(iter_cellphone);
+							cout << Delete_Product << "번 상품 삭제되었습니다.";
+							system("pause");
+							break;
+						}
+					}
+					if (Check_find == 0)
+					{
+						cout << "해당상품을 찾을수 없습니다.";
+						system("pause");
+					}
+				}
+
+				else if (Select_delete == 4)			// 3.4 뒤로가기
+				{
+					break;
+				}
+
+				else
+				{
+					while (getchar() != '\n');
+					cout << "잘못된 입력값입니다." << endl;
+				}
+			}
+		}
 		
-		else if (Select_main == 3)				// 3.프로그램종료
+		else if (Select_main == 4)						// 4.프로그램종료
 		{
 			exit(1);
 		}
