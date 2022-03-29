@@ -20,10 +20,10 @@ public:
 	}
 
 	virtual void getProduct()	// 상품 상세정보출력(공통)
-	{ 
-		cout << "idx : " << idx+1 << endl;
-		cout << "price : " << price << endl;
-		cout << "description : " << this->description << endl;
+	{
+		cout << " idx : " << idx + 1 << endl;
+		cout << " price : " << price << endl;
+		cout << " description : " << this->description << endl;
 
 	}
 
@@ -55,11 +55,11 @@ public:
 
 	void getProduct()		// 상품 상세정보출력(공통 + book)
 	{
-		cout << " ----- < Book 등록된 상품목록 > ----- " << endl << endl;
+
 		Product::getProduct();
-		cout << "title : " << this->title << endl;
-		cout << "write : " << this->write << endl;
-		cout << "publisher : " << this->publisher << endl << endl;
+		cout << " title : " << this->title << endl;
+		cout << " write : " << this->write << endl;
+		cout << " publisher : " << this->publisher << endl << endl;
 
 	}
 
@@ -90,10 +90,9 @@ public:
 	}
 	void getProduct()		// 상품 상세정보출력(공통 + CD)
 	{
-		cout << " ----- < CD 등록된 상품목록 > ----- " << endl << endl;
 		Product::getProduct();
-		cout << "title : " << this->title << endl;
-		cout << "singer : " << this->singer << endl<<endl;
+		cout << " title : " << this->title << endl;
+		cout << " singer : " << this->singer << endl << endl;
 	}
 
 	void DeleteProduct()			// 상품 삭제(공통 + CD)
@@ -109,30 +108,30 @@ class CellPhone :public Product			// 휴대폰 클래스 : 상품클래스 상속
 {
 private:
 	char* model;						// 모델명
-	char* brand;						// 브랜드명
+	char* manufacturer;						// 브랜드명
 public:
-	CellPhone(int aidx, int aprice, char* adescription, char* amodel, char* abrand)	// 상품추가(공통 + CellPhone)
+	CellPhone(int aidx, int aprice, char* adescription, char* amodel, char* amanufacturer)	// 상품추가(공통 + CellPhone)
 		:Product(aidx, aprice, adescription)
 	{
 		model = new char[strlen(amodel) + 1];
 		strcpy(model, amodel);
 
-		brand = new char[strlen(abrand) + 1];
-		strcpy(brand, abrand);
+		manufacturer = new char[strlen(amanufacturer) + 1];
+		strcpy(manufacturer, amanufacturer);
 	}
 	void getProduct()					// 상품 상세정보출력(공통 + 휴대폰)	
 	{
-		cout << " ----- < CellPhone 등록된 상품목록 > ----- " << endl << endl;
+
 		Product::getProduct();
-		cout << "model : " << this->model << endl;
-		cout << "brand : " << this->brand << endl << endl;
+		cout << " model : " << this->model << endl;
+		cout << " manufacturer : " << this->manufacturer << endl << endl;
 	}
 
 	void DeleteProduct()			// 상품 삭제(공통 + 휴대폰)
 	{
 		Product::DeleteProduct();
 		delete[]model;
-		delete[]brand;
+		delete[]manufacturer;
 	}
 };
 
@@ -148,11 +147,11 @@ int main(void)
 	{
 		int Select_main;		// 메인메뉴
 		cout << " +++++++++++++++ POS ++++++++++++++++" << endl << endl;
-		cout << "1. 상품추가" << endl;
-		cout << "2. 상품조회" << endl;
-		cout << "3. 상품삭제" << endl;
-		cout << "4. 종    료" << endl;
-		cout << "선택 : ";
+		cout << " 1. 상품추가" << endl;
+		cout << " 2. 상품조회" << endl;
+		cout << " 3. 상품삭제" << endl;
+		cout << " 4. 종    료" << endl << endl;
+		cout << " 선택 : ";
 		cin >> Select_main;
 
 		if (Select_main == 1)					// 1. 상품추가
@@ -162,17 +161,17 @@ int main(void)
 				system("cls");
 				int Select_Add;
 				cout << " +++++++++++++++ 상품추가 ++++++++++++++++" << endl << endl;
-				cout << "1. BOOK" << endl;
-				cout << "2. CD" << endl;
-				cout << "3. CELL PHONE" << endl;
-				cout << "4. 뒤로가기" << endl;
-				cout << "선택 : ";
+				cout << " 1. BOOK" << endl;
+				cout << " 2. CD" << endl;
+				cout << " 3. CELL PHONE" << endl;
+				cout << " 4. 뒤로가기" << endl << endl;
+				cout << " 선택 : ";
 				cin >> Select_Add;
 
 				if (Select_Add == 1)			// 1.1 book 추가
 				{
 					system("cls");
-					cout << "idx : " << idx+1 << endl;
+					cout << "idx : " << idx + 1 << endl;
 
 					int aprice;
 					cout << "price : "; cin >> aprice;
@@ -231,10 +230,10 @@ int main(void)
 					char amodel[20];
 					cout << "model : "; cin >> amodel;
 
-					char abrand[20];
-					cout << "brand : "; cin >> abrand;
+					char amanufacturer[20];
+					cout << "manufacturer : "; cin >> amanufacturer;
 
-					pobj[idx] = new CellPhone(idx, aprice, adescription, amodel, abrand);
+					pobj[idx] = new CellPhone(idx, aprice, adescription, amodel, amanufacturer);
 					cellphone_list.push_back(idx);
 					idx++;
 				}
@@ -247,38 +246,39 @@ int main(void)
 
 				else
 				{
+					system("cls");
 					while (getchar() != '\n');
-					cout << "잘못된 입력값입니다." << endl;
+					cout << " 잘못된 입력값입니다." << endl;
 				}
 			}
 
-				
+
 		}
-	
+
 		else if (Select_main == 2)				// 2. 상품조회
 		{
 			while (1)
 			{
-
-
 				system("cls");
 				int Select_view = 0;
 				cout << " +++++++++++++++ 상품조회 ++++++++++++++++" << endl << endl;
-				cout << "1. BOOK" << endl;
-				cout << "2. CD" << endl;
-				cout << "3. CELL PHONE" << endl;
-				cout << "4. 뒤로가기" << endl;
-				cout << "선택 : ";
+				cout << " 1. BOOK" << endl;
+				cout << " 2. CD" << endl;
+				cout << " 3. CELL PHONE" << endl;
+				cout << " 4. 뒤로가기" << endl << endl;
+				cout << " 선택 : ";
 				cin >> Select_view;
 
 
 				if (Select_view == 1)				// 2.1 book 목록출력
 				{
+					system("cls");
 					vector<int>::iterator iter_book;
-
+					cout << " ----- < Book 등록된 상품목록 > ----- " << endl << endl;
 					for (iter_book = book_list.begin(); iter_book != book_list.end(); iter_book++)
 					{
 						pobj[*iter_book]->getProduct();
+						cout << " ----------------------------------" << endl << endl;
 					}
 					system("pause");
 					system("cls");
@@ -286,11 +286,13 @@ int main(void)
 
 				else if (Select_view == 2)			// 2.2 cd 목록출력
 				{
+					system("cls");
 					vector<int>::iterator iter_cd;
-
+					cout << " ----- < CD 등록된 상품목록 > ----- " << endl << endl;
 					for (iter_cd = cd_list.begin(); iter_cd != cd_list.end(); iter_cd++)
 					{
 						pobj[*iter_cd]->getProduct();
+						cout << " ----------------------------------" << endl << endl;
 					}
 					system("pause");
 					system("cls");
@@ -298,11 +300,13 @@ int main(void)
 
 				else if (Select_view == 3)			// 2.3 CellPhone 목록출력
 				{
+					system("cls");
 					vector<int>::iterator iter_cellphone;
-
+					cout << " ----- < CellPhone 등록된 상품목록 > ----- " << endl << endl << endl;
 					for (iter_cellphone = cellphone_list.begin(); iter_cellphone != cellphone_list.end(); iter_cellphone++)
 					{
 						pobj[*iter_cellphone]->getProduct();
+						cout << " ----------------------------------" << endl << endl;
 					}
 					system("pause");
 					system("cls");
@@ -310,36 +314,37 @@ int main(void)
 
 				else if (Select_view == 4)		// 2.4 뒤로가기
 				{
+					system("cls");
 					break;
 				}
 
 				else
 				{
+					system("cls");
 					while (getchar() != '\n');
-					cout << "잘못된 입력값입니다." << endl;
+					cout << " 잘못된 입력값입니다." << endl;
 				}
 			}
-				
+
 		}
 
 		else if (Select_main == 3)				// 3.상품삭제
 		{
 			while (1)
 			{
-
-
 				system("cls");
 				int Select_delete = 0;
 				cout << " +++++++++++++++ 상품삭제 ++++++++++++++++" << endl << endl;
-				cout << "1. BOOK" << endl;
-				cout << "2. CD" << endl;
-				cout << "3. CELL PHONE" << endl;
-				cout << "4. 뒤로가기" << endl;
-				cout << "선택 : ";
+				cout << " 1. BOOK" << endl;
+				cout << " 2. CD" << endl;
+				cout << " 3. CELL PHONE" << endl;
+				cout << " 4. 뒤로가기" << endl << endl;
+				cout << " 선택 : ";
 				cin >> Select_delete;
 
 				if (Select_delete == 1)					// 3.1 book 삭제
 				{
+					system("cls");
 					int Check_find = 0;
 					int Delete_Product = 0;
 					vector<int>::iterator iter_book;
@@ -348,27 +353,28 @@ int main(void)
 					{
 						pobj[*iter_book]->getProduct();
 					}
-					
-					cout << "삭제하고자 하는 상품 번호를 입력하세요 :";
+
+					cout << " 삭제하고자 하는 상품 번호를 입력하세요 :";
 					cin >> Delete_Product;
 					Delete_Product--;
+					cout << endl;
 
-
-					for (iter_book = book_list.begin(); iter_book != book_list.end(); iter_book++)		
+					for (iter_book = book_list.begin(); iter_book != book_list.end(); iter_book++)
 					{
 						if (*iter_book == Delete_Product)
 						{
 							Check_find = 1;
 							pobj[Delete_Product]->DeleteProduct();
-							book_list.erase(iter_book);		
-							cout << Delete_Product << "번 상품 삭제되었습니다.";
+							delete pobj[Delete_Product];
+							book_list.erase(iter_book);
+							cout << Delete_Product+1 << " 번 상품 삭제되었습니다." << endl;
 							system("pause");
 							break;
 						}
 					}
 					if (Check_find == 0)
 					{
-						cout << "해당상품을 찾을수 없습니다.";
+						cout << " 해당상품을 찾을수 없습니다." << endl;
 						system("pause");
 					}
 
@@ -376,6 +382,7 @@ int main(void)
 
 				else if (Select_delete == 2)			// 3.2 cd 삭제
 				{
+					system("cls");
 					int Check_find = 0;
 					int Delete_Product = 0;
 					vector<int>::iterator iter_cd;
@@ -385,9 +392,11 @@ int main(void)
 						pobj[*iter_cd]->getProduct();
 					}
 
-					cout << "삭제하고자 하는 상품 번호를 입력하세요 :";
+					cout << " 삭제하고자 하는 상품 번호를 입력하세요 :";
 					cin >> Delete_Product;
 					Delete_Product--;
+					cout << endl;
+
 
 					for (iter_cd = cd_list.begin(); iter_cd != cd_list.end(); iter_cd++)
 					{
@@ -395,8 +404,9 @@ int main(void)
 						{
 							Check_find = 1;
 							pobj[Delete_Product]->DeleteProduct();
+							delete pobj[Delete_Product];
 							cd_list.erase(iter_cd);
-							cout << Delete_Product << "번 상품 삭제되었습니다.";
+							cout << Delete_Product+1 << " 번 상품 삭제되었습니다." << endl;
 							system("pause");
 							break;
 						}
@@ -404,13 +414,14 @@ int main(void)
 
 					if (Check_find == 0)
 					{
-						cout << "해당상품을 찾을수 없습니다.";
+						cout << " 해당상품을 찾을수 없습니다." << endl;
 						system("pause");
 					}
 				}
 
 				else if (Select_delete == 3)			// 3.3 cellPhone 삭제
 				{
+					system("cls");
 					int Check_find = 0;
 					int Delete_Product = 0;
 					vector<int>::iterator iter_cellphone;
@@ -420,9 +431,11 @@ int main(void)
 						pobj[*iter_cellphone]->getProduct();
 					}
 
-					cout << "삭제하고자 하는 상품 번호를 입력하세요 :";
+					cout << " 삭제하고자 하는 상품 번호를 입력하세요 :";
 					cin >> Delete_Product;
 					Delete_Product--;
+					cout << endl;
+
 
 					for (iter_cellphone = cellphone_list.begin(); iter_cellphone != cellphone_list.end(); iter_cellphone++)
 					{
@@ -430,32 +443,34 @@ int main(void)
 						{
 							Check_find = 1;
 							pobj[Delete_Product]->DeleteProduct();
+							delete pobj[Delete_Product];
 							cellphone_list.erase(iter_cellphone);
-							cout << Delete_Product << "번 상품 삭제되었습니다.";
+							cout << Delete_Product+1 << " 번 상품 삭제되었습니다." << endl;
 							system("pause");
 							break;
 						}
 					}
 					if (Check_find == 0)
 					{
-						cout << "해당상품을 찾을수 없습니다.";
+						cout << " 해당상품을 찾을수 없습니다." << endl;
 						system("pause");
 					}
 				}
 
 				else if (Select_delete == 4)			// 3.4 뒤로가기
 				{
+					system("cls");
 					break;
 				}
 
 				else
 				{
 					while (getchar() != '\n');
-					cout << "잘못된 입력값입니다." << endl;
+					cout << " 잘못된 입력값입니다." << endl;
 				}
 			}
 		}
-		
+
 		else if (Select_main == 4)						// 4.프로그램종료
 		{
 			exit(1);
@@ -463,11 +478,10 @@ int main(void)
 
 		else
 		{
+			system("cls");
 			while (getchar() != '\n');
-			cout << "잘못된 입력값입니다." << endl;
+			cout << " 잘못된 입력값입니다." << endl;
 		}
-			
-			
 	}
 
 	return 0;
