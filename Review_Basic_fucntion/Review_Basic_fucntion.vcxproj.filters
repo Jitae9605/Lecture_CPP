@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\05_1_ReferenceAttribute.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="source\02_4_EmployeeManager_Ver4.cpp">
+    <ClCompile Include="source\01_1_mollu.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,16 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\02_4_EmployeeManager_Ver4.cpp" />
-    <ClCompile Include="source\05_1_ReferenceAttribute.cpp" />
+    <ClCompile Include="source\01_1_mollu.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{74f80d32-e60c-4616-bddf-6771466cf599}</ProjectGuid>
-    <RootNamespace>chapter8</RootNamespace>
+    <ProjectGuid>{c0f12fd9-96c6-4d94-bc98-0a1cbae9338e}</ProjectGuid>
+    <RootNamespace>ReviewBasicfucntion</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>chapter08</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
