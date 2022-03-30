@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\02_4_EmployeeManager_Ver4.cpp" />
     <ClCompile Include="source\05_1_ReferenceAttribute.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
